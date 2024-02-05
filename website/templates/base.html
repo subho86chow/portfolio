@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="{% static 'css/plugins/bootstrap-grid.css'%}">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="{% static 'css/plugins/font-awesome.min.css'%}">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css'%}">
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="{% static 'css/plugins/fancybox.min.css'%}">
+    <!-- ashley scss -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <!-- page name -->
+    <title>It's me Shubhajit</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icons/favicon-dark.svg'%}">
+{% if testimonials%}
+    <style>
+        {% for testimonial in testimonials %}
+        .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-{{ testimonial.id }} {
+            background-image: url('{{ testimonial.client_photo.url }}');
+        }
+        {% endfor %}
+    </style>
+{% endif %}
+</head>
+
+<body>
+
+    <!-- wrapper -->
+{% block content%}
+
+{% endblock content %}
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="{% static 'js/plugins/jquery.min.js'%}"></script>
+    <!-- swup js -->
+    <script src="{% static 'js/plugins/swup.min.js'%}"></script>
+    <!-- swiper js -->
+    <script src="{% static 'js/plugins/swiper.min.js'%}"></script>
+    <!-- fancybox js -->
+    <script src="{% static 'js/plugins/fancybox.min.js'%}"></script>
+    <!-- gsap js -->
+    <script src="{% static 'js/plugins/gsap.min.js'%}"></script>
+    <!-- scroll smoother -->
+    <script src="{% static 'js/plugins/smooth-scroll.js'%}"></script>
+    <!-- scroll trigger js -->
+    <script src="{% static 'js/plugins/ScrollTrigger.min.js'%}"></script>
+    <!-- scroll to js -->
+    <script src="{% static 'js/plugins/ScrollTo.min.js'%}"></script>
+    <!-- ashley js -->
+    <script src="{% static 'js/main.js'%}"></script>ˀ
+    
+
+</body>
+</html>
