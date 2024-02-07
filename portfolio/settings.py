@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
+        'NAME': 'portfolio',
         'USER': 'postgres',
-        'PASSWORD': 'A2b564fD3dB3cAGeb2Cg*Dge5d4-fEac',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '32740',
+        'PASSWORD': 'demonspeed',
+        'HOST': 'database.cpgq4qwk81i5.us-west-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
