@@ -10,7 +10,11 @@
     "src": "build_files.sh",
     "use": "@vercel/static-build",
     "config": {
+<<<<<<< HEAD
     "distDir": "staticfiles_build"
+=======
+    "distDir": "static"
+>>>>>>> 9ed4628 (last commit)
      }
     }
     ],
