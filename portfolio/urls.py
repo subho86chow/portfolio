@@ -25,8 +25,4 @@ urlpatterns = [
     path('',include('website.urls')),
 ]
 urlpatterns += static( settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-<<<<<<< HEAD
 urlpatterns += static( settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-=======
-urlpatterns += static( settings.STATIC_URL, document_root = settings.STATIC_ROOT)
->>>>>>> 9ed4628 (last commit)

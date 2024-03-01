@@ -24,7 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y&e1_1@+_ebly!tva)1a3d1eo0-f4!do6u&3)noz(qf=di9xc$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+<<<<<<< HEAD
+# DEBUG = True
+=======
+DEBUG = True
+>>>>>>> 9ed4628 (last commit)
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh','127.0.0.1']
 
@@ -136,6 +140,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
 MEDIA_URLS = '/images/'
-
-
+<<<<<<< HEAD
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+=======
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+>>>>>>> 9ed4628 (last commit)

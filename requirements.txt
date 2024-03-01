@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 Django==4.2.9
 image==1.5.33
 sqlparse==0.4.4
 psycopg2-binary==2.9.9
-=======
-Django==5.0
-image==1.5.33
-sqlparse==0.4.4
-
->>>>>>> 9ed4628 (last commit)
