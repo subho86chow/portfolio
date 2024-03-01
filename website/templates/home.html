@@ -142,14 +142,14 @@
                                 </div>
                             </div>
 
-                            <div class="mil-banner-panel d-flex align-items-around">
+                            <div class="mil-banner-panel d-flex">
                                         <h6 class="mil-dark mil-mb-10">Enter email to book a call:</h6>
                                 <div class="mil-right">
                                     <div class="col-md-12 col-lg-12">
 
                                         <form class="mil-subscribe-form mil-up mil-mb-10" method="POST">
                                             {% csrf_token %}
-                                            <input type="email" name="email" placeholder="Enter your email">
+                                            <input type="email" name="email" placeholder="Enter email">
                                             <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
                                         </form>
 

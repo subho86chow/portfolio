@@ -24,13 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y&e1_1@+_ebly!tva)1a3d1eo0-f4!do6u&3)noz(qf=di9xc$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
-# DEBUG = True
-=======
-DEBUG = True
->>>>>>> 9ed4628 (last commit)
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh','127.0.0.1']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://*.itsmeshubhajit.online','http://127.0.0.1']
 
 
 # Application definition
@@ -79,14 +76,22 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'portfolio',
+#         'USER': 'postgres',
+#         'PASSWORD': 'demonspeed',
+#         'HOST': 'database.cpgq4qwk81i5.us-west-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'demonspeed',
-        'HOST': 'database.cpgq4qwk81i5.us-west-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -132,16 +137,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+STATIC_ROOT='staticfiles'
 
 MEDIA_URLS = '/images/'
-<<<<<<< HEAD
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-=======
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
->>>>>>> 9ed4628 (last commit)
+
+
+
