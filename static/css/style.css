@@ -1720,9 +1720,16 @@ banner
 .mil-banner-personal .mil-banner-content .mil-personal-text {
   margin-bottom: 300px;
 }
+
+@media screen and (max-width: 500px){
+  .mil-banner-personal .mil-banner-content .mil-personal-text {
+    margin-bottom: 0px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .mil-banner-personal .mil-banner-content .mil-personal-text {
-    /* margin-bottom: 80px; */
+    margin-bottom: 80px;
     text-align: center;
   }
 }
