@@ -17,7 +17,7 @@
     <!-- cursor end -->
 
     <!-- preloader -->
-     {% comment %} <div class="mil-preloader">
+    {% comment %} <div class="mil-preloader">
         <div class="mil-preloader-animation">
             <div class="mil-pos-abs mil-animation-1">
                 <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-    </div>  {% endcomment %}
+    </div> {% endcomment %}
     <!-- preloader end -->
 
     <!-- scrollbar progress -->
@@ -116,16 +116,17 @@
                         <div class="col-lg-9">
                             <div class="swiper-container mil-portfolio-slider mil-up">
                                 <div style="text-align: center;" class="mb-3 container ">
-                                   <h6 style="color:black;"> <i class="far fa-arrow-alt-circle-left"></i> Swipe left or right <i class="far fa-arrow-alt-circle-right"></i></h6>
-                                </div>
+                                    <h6 style="color:black;"> <i class="far fa-arrow-alt-circle-left"></i> Swipe left or right <i class="far fa-arrow-alt-circle-right"></i></h6>
+                                 </div>
                                 <div class="swiper-wrapper">
+
 
                                 {% for project in projects %}
                                     <div class="swiper-slide">
                                         <div class="mil-portfolio-item mil-slider-item" data-swiper-parallax="-30">
                                             <div class="mil-cover-frame mil-drag">
                                                 <div class="mil-cover" data-swiper-parallax-scale="1.3">
-                                                    <img src="/{{project.labelimg}}" alt="cover">
+                                                    <img src="{{project.labelimg.url}}" alt="cover">
                                                 </div>
                                             </div>
                                             <div class="mil-descr" data-swiper-parallax-x="104%" data-swiper-parallax-opacity="0">

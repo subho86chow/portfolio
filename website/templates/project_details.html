@@ -26,7 +26,7 @@
     <div class="mil-menu-frame">
         <!-- frame clone -->
         <div class="mil-frame-top">
-            <a href="home-2.html" class="mil-logo">A.</a>
+            <a href="{% url 'home'%}" class="mil-logo">S.</a>
             <div class="mil-menu-btn">
                 <span></span>
             </div>
@@ -113,7 +113,7 @@
             <section class="mil-p-120-0">
                 <div class="container mil-p-0-120" id="project">
                     <div class="mil-image-frame mil-horizontal mil-up">
-                        <img src="/{{project.labelimg}}" alt="image">
+                        <img src="{{project.labelimg.url}}" alt="image">
                         <a data-fancybox="gallery" data-no-swup href="/{{project.labelimg}}" class="mil-zoom">
                         </a>
                     </div>
@@ -127,8 +127,8 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-square mil-up mil-mb-30">
-                                    <img src="/{{project.subimg1}}" alt="image">
-                                    <a data-fancybox="gallery" data-no-swup href="/{{project.subimg1}}" class="mil-zoom">
+                                    <img src="{{project.subimg1.url}}" alt="image">
+                                    <a data-fancybox="gallery" data-no-swup href="{{project.subimg1.url}}" class="mil-zoom">
                                     </a>
                                 </div>
 
@@ -136,8 +136,8 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-square mil-up mil-mb-30">
-                                    <img src="/{{project.subimg2}}" alt="image">
-                                    <a data-fancybox="gallery" data-no-swup href="/{{project.subimg2}}" class="mil-zoom">
+                                    <img src="{{project.subimg2.url}}" alt="image">
+                                    <a data-fancybox="gallery" data-no-swup href="{{project.subimg2.url}}" class="mil-zoom">
                                     </a>
                                 </div>
 
@@ -145,8 +145,8 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-square mil-up mil-mb-30">
-                                    <img src="/{{project.subimg3}}" alt="image">
-                                    <a data-fancybox="gallery" data-no-swup href="/{{project.subimg3}}" class="mil-zoom">
+                                    <img src="{{project.subimg3.url}}" alt="image">
+                                    <a data-fancybox="gallery" data-no-swup href="{{project.subimg3.url}}" class="mil-zoom">
                                     </a>
                                 </div>
 
@@ -154,8 +154,8 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-square mil-up mil-mb-30">
-                                    <img src="/{{project.subimg4}}" alt="image">
-                                    <a data-fancybox="gallery" data-no-swup href="/{{project.subimg4}}" class="mil-zoom">
+                                    <img src="{{project.subimg4.url}}" alt="image">
+                                    <a data-fancybox="gallery" data-no-swup href="{{project.subimg4.url}}" class="mil-zoom">
                                     </a>
                                 </div>
 
@@ -175,8 +175,8 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-vertical mil-up mil-mb-30">
-                                    <img src="/{{project.endimg1}}" alt="image">
-                                    <a data-fancybox="gallery" data-no-swup href="/{{project.endimg1}}" class="mil-zoom">
+                                    <img src="{{project.endimg1.url}}" alt="image">
+                                    <a data-fancybox="gallery" data-no-swup href="{{project.endimg1.url}}" class="mil-zoom">
                                     </a>
                                 </div>
 
@@ -184,8 +184,8 @@
                             <div class="col-lg-6">
 
                                 <div class="mil-image-frame mil-vertical mil-up mil-mb-30">
-                                    <img src="/{{project.endimg2}}" alt="image">
-                                    <a data-fancybox="gallery" data-no-swup href="/{{project.endimg2}}" class="mil-zoom">
+                                    <img src="{{project.endimg2.url}}" alt="image">
+                                    <a data-fancybox="gallery" data-no-swup href="{{project.endimg2.url}}" class="mil-zoom">
                                     </a>
                                 </div>
 

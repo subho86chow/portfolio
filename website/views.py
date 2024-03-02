@@ -63,25 +63,17 @@ def customdev(request):
     return render(request,'customdev.html',context)
 
 def facebook(request):
-    social = socials.objects.all().first()
-    facebook = str(social.facebook)
-    # facebook = 'https://www.facebook.com/profile.php?id=100083938923609'
+    facebook = 'https://www.facebook.com/profile.php?id=100083938923609'
     return redirect(facebook)
 
 def instagram(request):
-    social = socials.objects.all().first()
-    instagram = str(social.instagram)
-    # instagram = 'https://www.instagram.com/shubhajit_ch0wdhury/'
+    instagram = 'https://www.instagram.com/shubhajit_ch0wdhury/'
     return redirect(instagram)
 
 def linkedin(request):
-    social = socials.objects.all().first()
-    linkedin = str(social.linkedin)
-    # linkedin = 'https://www.linkedin.com/in/shubhajit--chowdhury/'
+    linkedin = 'https://www.linkedin.com/in/shubhajit--chowdhury/'
     return redirect(linkedin)
 
 def calendely(request):
-    social = socials.objects.all().first()
-    calendely = str(social.calendely)
-    # calendely = 'https://calendly.com/itsmeshubho/schedule-a-virtual-meeting'
+    calendely = 'https://calendly.com/itsmeshubho/schedule-a-virtual-meeting'
     return redirect(calendely)

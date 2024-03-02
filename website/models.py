@@ -63,11 +63,3 @@ class Contact_message(models.Model):
         return str(self.name)
     
     
-class socials(models.Model):
-    facebook = models.CharField(max_length=150,null=True,blank=True)
-    instagram = models.CharField(max_length=150,null=True,blank=True)
-    linkedin = models.CharField(max_length=150,null=True,blank=True)
-    calendely = models.CharField(max_length=150,null=True,blank=True)
-
-    def __str__(self):
-        return "social links"
