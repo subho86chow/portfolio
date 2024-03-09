@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-y&e1_1@+_ebly!tva)1a3d1eo0-f4!do6u&3)noz(qf=di9xc$
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://*.itsmeshubhajit.online','http://127.0.0.1']
+# CSRF_TRUSTED_ORIGINS = ['https://*.itsmeshubhajit.online','http://127.0.0.1']
 
 
 # Application definition
@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'demonspeed',
-        'HOST': 'database.cpgq4qwk81i5.us-west-2.rds.amazonaws.com',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'VBrSEJUm6WP2',
+        'HOST': 'ep-red-sky-a13bezto-pooler.ap-southeast-1.aws.neon.tech',
         'PORT': '5432',
     }
 }
@@ -135,7 +135,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
 MEDIA_URLS = '/images/'
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
