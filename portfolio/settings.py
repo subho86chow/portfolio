@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,17 +77,21 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'verceldb',
-        'USER': 'default',
-        'PASSWORD': 'VBrSEJUm6WP2',
-        'HOST': 'ep-red-sky-a13bezto-pooler.ap-southeast-1.aws.neon.tech',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'verceldb',
+#         'USER': 'default',
+#         'PASSWORD': 'VBrSEJUm6WP2',
+#         'HOST': 'ep-red-sky-a13bezto-pooler.ap-southeast-1.aws.neon.tech',
+#         'PORT': '5432',
+#     }
+# }
 
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -137,12 +142,13 @@ STATICFILES_DIRS = [
 ]
 # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-MEDIA_URLS = '/images/'
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
-
-MEDIA_URLS = '/images/'                 
-
 MEDIA_URL = '/static/images/'
+STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+
+# MEDIA_URLS = 'static/images/'                 
+
+# MEDIA_URL = '/static/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
