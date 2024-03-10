@@ -42,7 +42,8 @@ def contact(request):
             cemail = request.POST['cemail']
             message = request.POST['message']
             Contact_message.objects.create(name = name, email=cemail,message=message)
-            return redirect('home')
+            return redirect('contact')
+        
     context = {'navbar':"contact"}
     return render(request,"contact.html",context)
 
