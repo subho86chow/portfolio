@@ -8,13 +8,21 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-134Z8CJTFW');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <title>{% block title%}{% endblock title%} | itsmeshubhajit</title>
+    <meta name="description" content="Web solution for Saas founders, Web development, Web design, SEO, Social media optimisation">
+    <meta name="keywords" content="web development, web design, seo, ecommerce, leads generation, social media optimisation, ranking">
+    <meta name="author" content="Shubhajit Chowdhury">
+    <meta name="og:url" content="https://{{request.META.HTTP_HOST}}{{request.PATH}}">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="{% block og-caption%} itsmeshubhajit{% endblock og-caption%}">
+    <meta name="og:description" content="Web solution for Saas founders, Web development, Web design, SEO, Social media optimisation">
+    <meta name="og:image" content="https://{{request.META.HTTP_HOST}}{% static 'img/photo/og-image.jpg'%}">
+    <meta name="og:twitter" content="https://{{request.META.HTTP_HOST}}{% static 'img/photo/og-twitter.png'%}">
     <!-- bootstrap grid css -->
     <link rel="stylesheet" href="{% static 'css/plugins/bootstrap-grid.css'%}">
     <!-- font awesome css -->
@@ -23,11 +31,11 @@
     <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css'%}">
     <!-- fancybox css -->
     <link rel="stylesheet" href="{% static 'css/plugins/fancybox.min.css'%}">
-    <!-- ashley scss -->
+    <!-- scss -->
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <!-- page name -->
     <title>It's me Shubhajit</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'img/icons/favicon-dark.svg'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icons/favicon-dark.svg'%}" alt="itsmeshubhajit">
 {% if testimonials%}
     <style>
         {% for testimonial in testimonials %}

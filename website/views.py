@@ -1,5 +1,9 @@
 from django.shortcuts import render,redirect
 from .models import *
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+
 
 # Create your views here.
 def home(request):
@@ -15,7 +19,7 @@ def portfolio(request):
     return render(request,"portfolio.html",context)
 
 def project_details(request,str):
-    project = Projects.objects.filter(project_name = str)
+    project = Projects.objects.filter(project_name = str).first()
     context = {'project':project,'navbar':"portfolio"}
     return render(request,"project_details.html",context)
 
@@ -42,6 +46,14 @@ def contact(request):
             cemail = request.POST['cemail']
             message = request.POST['message']
             Contact_message.objects.create(name = name, email=cemail,message=message)
+            subject = 'Your request has been sent.'
+            from_email = settings.EMAIL_HOST_USER
+            to_email = [cemail]
+            logo = f"{request.META.HTTP_HOST}{settings.STATIC_URL}/img/icons/mylogo.png"
+            html_content = render_to_string('thank_you_email.html', {'username':name,'logo':logo})
+            email = EmailMultiAlternatives(subject, 'This is a plain text message.', from_email, to_email)
+            email.attach_alternative(html_content, "text/html")
+            email.send()
             return redirect('contact')
         
     context = {'navbar':"contact"}

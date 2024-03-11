@@ -23,6 +23,10 @@ class Projects(models.Model):
     def __str__(self):
         return str(self.project_name)
     
+    def get_absolute_url(self):
+        return f'/portfolio/{self.project_name}/'
+    
+    
 
 class Testimonials(models.Model):
     project_name = models.OneToOneField(Projects,on_delete = models.CASCADE)
