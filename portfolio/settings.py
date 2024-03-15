@@ -106,29 +106,29 @@ EMAIL_HOST_PASSWORD = 'jaj3vK#y'  # Your email password
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# # Default primary key field type
+# # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+# # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-MEDIA_URL = '/static/images/'
-STATIC_ROOT = 'staticfiles'
-# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+# MEDIA_URL = '/static/images/'
+# STATIC_ROOT = 'staticfiles'
+# # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-MEDIA_URLS = 'static/images/'                 
-MEDIA_URL = '/static/images/'
+# MEDIA_URLS = 'static/images/'                 
+# MEDIA_URL = '/static/images/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
 # -----------------dev---------------------
@@ -151,3 +151,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
+# ---------------vercel--------------------
+
+
+
+STATIC_URL = 'static/'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+MEDIA_URLS = '/images/'
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+MEDIA_URLS = '/images/'                 
+MEDIA_URL = '/static/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
