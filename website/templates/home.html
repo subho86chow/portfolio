@@ -18,7 +18,7 @@
         <!-- cursor end -->
 
         <!-- preloader -->
-        <div class="mil-preloader">
+        {% comment %} <div class="mil-preloader">
             <div class="mil-preloader-animation">
                 <div class="mil-pos-abs mil-animation-1">
                     <p class="mil-h3 mil-muted mil-thin">Design</p>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  {% endcomment %}
         <!-- preloader end -->
 
         <!-- scrollbar progress -->
@@ -124,33 +124,35 @@
                                         <h1 class="mil-mb-30">Shubhajit <br>Chowdhury</h1>
                                         <div class="row justify-content-center">
                                             <div class="col-lg-8">
-                                                <span class="mil-suptitle mil-suptitle-dark mil-mb-60">Passionately Creating Strategic Design: <br>Optimizing SEO and Conversion Magicy</span>
+                                                <span class="mil-suptitle mil-suptitle-dark ">Passionately Creating Strategic Design: <br>Optimizing SEO and Conversion Magicy</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="mil-portrait-frame">
-                                        <img src="{% static 'img/faces/large/3.png'%}" alt="Portrait">
-                                    </div>
+                                        <div class="mil-portrait-frame">
+                                            <a href="/services/" class="mil-service-card-lg mil-more mil-accent-cursor">
+                                            <img style="z-index:-9;" src="{% static 'img/faces/large/self-bg.png'%}" alt="Portrait">
+                                        </a>
+                                        </div>
                                 </div>
                             </div>
 
                             <div class="mil-banner-panel d-flex align-items-around">
                                         <h6 class="mil-dark mil-mb-10">Enter email to book a call:</h6>
-                                <div class="mil-right">
-                                    <div class="col-md-12 col-lg-12">
+                                <div class="mil-right mil-ml-5">
+                                    <div class="col-md-12 col-lg-8">
 
                                         <form class="mil-subscribe-form mil-up mil-mb-10" method="POST">
                                             {% csrf_token %}
-                                            <input type="email" name="email" placeholder="Enter email">
+                                            <input style="border:1px solid black" type="email" name="email" placeholder="Enter email">
                                             <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
                                         </form>
 
                                     </div>
                                     <span style="margin-left: 10px;"></span>
                                 
-                                    <a href="{% url 'portfolio'%}" class="mil-button mil-arrow-place">
+                                    <a style="border:1px solid black" href="{% url 'portfolio'%}" class="mil-button mil-arrow-place">
                                         <span>View Portfolio</span>
                                     </a>
                                 </div>
@@ -161,6 +163,19 @@
 
                 </section>
                 <!-- banner end -->
+                 
+
+
+
+
+                
+
+
+
+
+
+
+
 
                 <!-- hidden elements -->
                 <div class="mil-hidden-elements">
@@ -273,5 +288,7 @@
         <!-- content -->
     </div>
     <!-- wrapper end -->
+
+    
 
 {% endblock content%}

@@ -604,7 +604,7 @@ button
   white-space: nowrap;
 }
 .mil-button svg {
-  margin-left: 30px;
+  margin-left: 10px;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -841,6 +841,14 @@ backgrounds
 spaces
 
 ------------------------------------------- */
+@media screen and (min-width:992px){
+  .mil-ml-5{
+    margin-left: 20px !important;
+  }
+  
+}
+
+
 .mil-mr-30 {
   margin-right: 30px;
 }
@@ -1717,9 +1725,12 @@ banner
     padding-top: 180px;
   }
 }
-.mil-banner-personal .mil-banner-content .mil-personal-text {
-  margin-bottom: 300px;
+@media screen and (min-width: 991px){
+  .mil-banner-personal .mil-banner-content .mil-personal-text {
+    margin-bottom: 300px;
+  }
 }
+
 
 @media screen and (max-width: 500px){
   .mil-banner-personal .mil-banner-content .mil-personal-text {
@@ -1729,10 +1740,19 @@ banner
 
 @media screen and (max-width: 992px) {
   .mil-banner-personal .mil-banner-content .mil-personal-text {
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
     text-align: center;
   }
 }
+
+@media (min-width:766px) and (max-width:910px){
+  .mil-md-input-width{
+    width: 120% !important;
+  }
+}
+
+
+
 .mil-banner-personal .mil-banner-content .mil-banner-panel {
   display: -webkit-box;
   display: -ms-flexbox;
