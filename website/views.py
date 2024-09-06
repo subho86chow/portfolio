@@ -94,3 +94,7 @@ def calendely(request):
     social_ins = social_links.objects.all().first()
     calendely = social_ins.calendely
     return redirect(calendely)
+
+def handeling404(request, exception):
+    return render(request,'404.html',{})
+
