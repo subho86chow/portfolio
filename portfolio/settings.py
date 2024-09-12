@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y&e1_1@+_ebly!tva)1a3d1eo0-f4!do6u&3)noz(qf=di9xc$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://*.itsmeshubhajit.online','http://127.0.0.1']
@@ -141,36 +141,36 @@ DEFAULT_FROM_EMAIL = 'subho@itsmeshubhajit.online' # default email address
 
 # -----------------dev---------------------
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+# # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-MEDIA_URL = '/static/images/'
-STATIC_ROOT = 'staticfiles'
-# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+# MEDIA_URL = '/static/images/'
+# STATIC_ROOT = 'staticfiles'
+# # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-MEDIA_URLS = '/media/'                 
-MEDIA_URL = 'media/'
+# MEDIA_URLS = '/media/'                 
+# MEDIA_URL = 'media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
 # ---------------vercel--------------------
 
 
 
-# STATIC_URL = 'static/'
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# STATIC_URL = 'static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
-# MEDIA_URLS = '/images/'
-# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
-# MEDIA_URLS = '/images/'                 
-# MEDIA_URL = '/static/images/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+STATIC_URL = 'static/'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+MEDIA_URLS = '/images/'
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+MEDIA_URLS = '/images/'                 
+MEDIA_URL = '/static/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
