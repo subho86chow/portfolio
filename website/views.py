@@ -3,6 +3,7 @@ from .models import *
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from premailer import transform
 
 
 # Create your views here.
@@ -42,19 +43,23 @@ def contact(request):
             return redirect('contact')
         
         if 'message_submit' in request.POST:
-            name = request.POST['name']
-            cemail = request.POST['cemail']
-            message = request.POST['message']
-            Contact_message.objects.create(name = name, email=cemail,message=message)
-            subject = 'Your request has been sent.'
-            from_email = settings.EMAIL_HOST_USER
-            to_email = [cemail]
-            logo = f"{request.META.HTTP_HOST}{settings.STATIC_URL}/img/icons/mylogo.png"
-            html_content = render_to_string('thank_you_email.html', {'username':name,'logo':logo})
-            email = EmailMultiAlternatives(subject, 'This is a plain text message.', from_email, to_email)
-            email.attach_alternative(html_content, "text/html")
-            email.send()
-            return redirect('contact')
+            try:
+                name = request.POST['name']
+                cemail = request.POST['cemail']
+                message = request.POST['message']
+                Contact_message.objects.create(name = name, email=cemail,message=message)
+                subject = 'Request Received – Thank You'
+                from_email = settings.DEFAULT_FROM_EMAIL
+                to_email = [cemail]
+                html_content = render_to_string('thank_you_mail.html', {'username':name})
+                transformed_email = transform(html_content)
+                email = EmailMultiAlternatives(subject, 'This is a plain text message.', from_email, to_email)
+                email.attach_alternative(transformed_email, "text/html")
+                email.send()
+                return redirect('contact')
+            except Exception as e:
+                print(e)
+                return redirect('contact')
         
     context = {'navbar':"contact"}
     return render(request,"contact.html",context)

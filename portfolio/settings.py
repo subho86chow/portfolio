@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y&e1_1@+_ebly!tva)1a3d1eo0-f4!do6u&3)noz(qf=di9xc$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://*.itsmeshubhajit.online','http://127.0.0.1']
@@ -104,11 +104,13 @@ USE_TZ = True
 
 # email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.zoho.in'  # Your SMTP server
+PREMAILER_OPTIONS = {'remove_classes': False}
+EMAIL_HOST = 'smtp.gmail.com'  # Your SMTP server
 EMAIL_PORT = 587  # Your SMTP port (587 for TLS, 465 for SSL)
 EMAIL_USE_TLS = True  # Use TLS (True/False)
-EMAIL_HOST_USER = 'support@itsmeshubhajit.online'  # Your email address
-EMAIL_HOST_PASSWORD = 'jaj3vK#y'  # Your email password
+EMAIL_HOST_USER = 'subho86chow@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'rtmd ejbx fube narb'  # Your email password
+DEFAULT_FROM_EMAIL = 'subho@itsmeshubhajit.online' # default email address
 
 # Static files (CSS, JavaScript, Images)
 
@@ -139,36 +141,36 @@ EMAIL_HOST_PASSWORD = 'jaj3vK#y'  # Your email password
 
 # -----------------dev---------------------
 
-# STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
-# # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-# MEDIA_URL = '/static/images/'
-# STATIC_ROOT = 'staticfiles'
-# # STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+MEDIA_URL = '/static/images/'
+STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
-# MEDIA_URLS = '/media/'                 
-# MEDIA_URL = 'media/'
+MEDIA_URLS = '/media/'                 
+MEDIA_URL = 'media/'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
 # ---------------vercel--------------------
 
 
 
-STATIC_URL = 'static/'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-MEDIA_URLS = '/images/'
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
-MEDIA_URLS = '/images/'                 
-MEDIA_URL = '/static/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+# STATIC_URL = 'static/'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# STATIC_URL = 'static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+# MEDIA_URLS = '/images/'
+# STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+# MEDIA_URLS = '/images/'                 
+# MEDIA_URL = '/static/images/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')

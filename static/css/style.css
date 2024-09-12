@@ -679,7 +679,6 @@ textarea {
   padding: 0 30px;
   width: 100%;
   font-size: 12px;
-  text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
   font-family: "Outfit", sans-serif;
@@ -3067,6 +3066,7 @@ footer
   width: 100%;
 }
 .mil-subscribe-form input {
+  text-align: center;
   height: 100%;
   width: 100%;
   max-width:400px;
@@ -3074,11 +3074,10 @@ footer
   color: rgb(0, 0, 0);
   font-size: 12px;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 2px;
   border: 2px black;
   border-radius: 70px;
-  padding: 0 0 0 50px;
+  padding: 0 60px 0 15px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
@@ -3246,11 +3245,11 @@ portfolio
 
 .mil-portfolio-slider-frame {
   z-index: 0;
-  padding-top: 150px;
+  padding-top: 110px;
 }
 @media screen and (max-width: 992px) {
   .mil-portfolio-slider-frame {
-    padding-top: 180px;
+    padding-top: 140px;
   }
 }
 
