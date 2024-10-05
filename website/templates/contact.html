@@ -172,6 +172,11 @@
                         <div class="col-lg-12 mil-up">
                             <textarea name="message" placeholder="Tell us about our project"></textarea>
                         </div>
+                        <div class="col-lg-4 mil-up">
+                            <img style="padding: 0px 30px;" src="{{ captcha_image_url }}" alt="Captcha">  <!-- Render captcha image -->
+                            <input type="hidden" name="captcha_id" value="{{ captcha_key }}">  <!-- Hidden captcha key -->
+                            <input type="text" name="captcha_0" placeholder="Enter captcha" required>  <!-- User input for captcha -->
+                        </div>
                         <div class="col-lg-8">
                             <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> I promise not to disclose your personal information to third parties.</p>
                         </div>

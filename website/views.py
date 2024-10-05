@@ -4,6 +4,8 @@ from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from premailer import transform
+from captcha.models import CaptchaStore
+from captcha.helpers import captcha_image_url
 
 
 # Create your views here.
@@ -36,6 +38,8 @@ def services(request):
     return render(request,"services.html",context)
 
 def contact(request):
+    captcha = CaptchaStore.generate_key()
+
     if request.method == 'POST':
         if 'email_submit' in request.POST:
             email = request.POST['email']
@@ -43,25 +47,33 @@ def contact(request):
             return redirect('contact')
         
         if 'message_submit' in request.POST:
-            try:
-                name = request.POST['name']
-                cemail = request.POST['cemail']
-                message = request.POST['message']
-                Contact_message.objects.create(name = name, email=cemail,message=message)
-                subject = 'Request Received – Thank You'
-                from_email = settings.DEFAULT_FROM_EMAIL
-                to_email = [cemail]
-                html_content = render_to_string('thank_you_mail.html', {'username':name})
-                transformed_email = transform(html_content)
-                email = EmailMultiAlternatives(subject, 'This is a plain text message.', from_email, to_email)
-                email.attach_alternative(transformed_email, "text/html")
-                email.send()
-                return redirect('contact')
-            except Exception as e:
-                print(e)
+            name = request.POST['name']
+            cemail = request.POST['cemail']
+            message = request.POST['message']
+            captcha_response = request.POST['captcha_0']
+            captcha_id = request.POST.get('captcha_id')
+
+
+            if captcha_response == CaptchaStore.objects.get(hashkey=captcha_id).challenge:
+                try:
+                    Contact_message.objects.create(name=name, email=cemail, message=message)
+                    subject = 'Request Received – Thank You'
+                    from_email = settings.DEFAULT_FROM_EMAIL
+                    to_email = [cemail]
+                    html_content = render_to_string('thank_you_mail.html', {'username': name})
+                    transformed_email = transform(html_content)
+                    email = EmailMultiAlternatives(subject, 'This is a plain text message.', from_email, to_email)
+                    email.attach_alternative(transformed_email, "text/html")
+                    email.send()
+                    return redirect('contact')
+                except Exception as e:
+                    print(e)
+                    return redirect('contact')
+            else:
+                # Handle captcha failure
                 return redirect('contact')
         
-    context = {'navbar':"contact"}
+    context = {'navbar':"contact",'captcha_image_url': captcha_image_url(captcha),'captcha_key': captcha}
     return render(request,"contact.html",context)
 
 def webdev(request):

@@ -58,13 +58,13 @@ class Customer_emails(models.Model):
     
 
 class Contact_message(models.Model):
-    name= models.CharField(max_length= 50,null= True, blank = True)
-    email= models.CharField(max_length= 100,null= True, blank = True)
-    message= models.CharField(max_length= 500,null= True, blank = True)
+    name= models.CharField(max_length= 50,null= True, blank = True,verbose_name="Name")
+    email= models.CharField(max_length= 100,null= True, blank = True,verbose_name="Email")
+    message= models.CharField(max_length= 500,null= True, blank = True,verbose_name="Message")
     date_created = models.DateTimeField(auto_now_add = True)
 
     def __str__(self):
-        return str(self.name)
+        return str(self.name + ',' + self.email + ',' + self.message)
     
 
 class social_links(models.Model):
